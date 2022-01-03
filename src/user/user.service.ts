@@ -70,7 +70,7 @@ export class UserService {
   }
 
   buildUserResponse(user: UserEntity): UserResponse {
-    const { id, username, email, bio, image } = user;
+    const { id, username, email, bio, image, favorites } = user;
 
     return {
       user: {
@@ -79,6 +79,7 @@ export class UserService {
         email,
         bio,
         image,
+        favorites,
         token: this.generateJwt(user),
       },
     };

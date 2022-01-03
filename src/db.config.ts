@@ -1,6 +1,7 @@
 import { ConnectionOptions } from 'typeorm';
 import { TagEntity } from '@app/tag/tag.entity';
 import { UserEntity } from '@app/user/user.entity';
+import { ArticleEntity } from '@app/article/article.entity';
 
 const config: ConnectionOptions = {
   type: 'postgres',
@@ -9,7 +10,7 @@ const config: ConnectionOptions = {
   username: process.env.DATABASE_USER,
   password: process.env.DATABASE_PASSWORD,
   port: 5432,
-  entities: [TagEntity, UserEntity],
+  entities: [TagEntity, UserEntity, ArticleEntity],
   synchronize: process.env.NODE_ENV === 'dev',
 };
 
